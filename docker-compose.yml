@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    container_name: postgres
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - target: 5432
+        published: ${POSTGRES_PORT}
